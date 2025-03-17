@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# pharmaversedata
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of pharmaversedata is to make it easy to access pharmaverse data and its documentation.
+
+## Installation
+
+You can install the development version of pharmaversedata from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("maurolepore/pharmaversedata")
+```
+
+## Example
+
+```{r example}
+library(tibble)
+library(pharmaversedata)
+
+specs$define
+
+specs$datasets
+
+specs$variables
+
+knitr::kable(head(pharmadverse))
+```
