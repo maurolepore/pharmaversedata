@@ -33,4 +33,3 @@ usethis::use_data(adam_variables, overwrite = TRUE)
 json <- system.file("extdata", "sdtms-specs.json", package = "pharmaversesdtm")
 sdtm_datasets <- tibble::tibble(jsonlite::fromJSON(json)[[1]]) |> standardize()
 usethis::use_data(sdtm_datasets, overwrite = TRUE)
-
