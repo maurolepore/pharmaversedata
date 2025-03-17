@@ -9,7 +9,7 @@
 <!-- badges: end -->
 
 The goal of pharmaversedata is to make it easy to access pharmaverse
-data and its documentation.
+data, metadata, and its documentation.
 
 ## Installation
 
@@ -29,57 +29,59 @@ library(pharmaversedata)
 #> Loading required package: pharmaverseadam
 #> Loading required package: pharmaversesdtm
 
-specs$define
-#> # A tibble: 9 × 2
-#>   attribute        value                                                        
-#>   <chr>            <chr>                                                        
-#> 1 StudyName        <NA>                                                         
-#> 2 StudyDescription <NA>                                                         
-#> 3 ProtocolName     <NA>                                                         
-#> 4 StandardName     ADaM-IG                                                      
-#> 5 StandardVersion  1.1                                                          
-#> 6 Language         en                                                           
-#> 7 <NA>             <NA>                                                         
-#> 8 Legend           Highlighted cells are required for Define-XML 2.1 and can be…
-#> 9 <NA>             Highlighted cells are used by ADaM only and can be left empt…
-
-specs$datasets
+adam_datasets
 #> # A tibble: 23 × 12
-#>    dataset  label   class sub_class structure key_variables standard has_no_data
-#>    <chr>    <chr>   <chr> <lgl>     <chr>     <chr>         <chr>    <chr>      
-#>  1 ADAE     Advers… OCCU… NA        One reco… STUDYID, USU… ADaM-IG… No         
-#>  2 ADBCVA_P Best C… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         
-#>  3 ADCE_V   Clinic… <NA>  NA        <NA>      <NA>          ADaM-IG… No         
-#>  4 ADCM     Concom… <NA>  NA        <NA>      <NA>          ADaM-IG… No         
-#>  5 ADEG     Electr… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         
-#>  6 ADEX     Exposu… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         
-#>  7 ADFACE_V Findin… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         
-#>  8 ADIS_V   Immuno… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         
-#>  9 ADLB     Labora… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         
-#> 10 ADLBHY   Analys… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         
+#>    dataset  label   key_variables class sub_class structure standard has_no_data
+#>    <chr>    <chr>   <chr>         <chr> <lgl>     <chr>     <chr>    <chr>      
+#>  1 ADAE     Advers… STUDYID, USU… OCCU… NA        One reco… ADaM-IG… No         
+#>  2 ADBCVA_P Best C… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         
+#>  3 ADCE_V   Clinic… <NA>          <NA>  NA        <NA>      ADaM-IG… No         
+#>  4 ADCM     Concom… <NA>          <NA>  NA        <NA>      ADaM-IG… No         
+#>  5 ADEG     Electr… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         
+#>  6 ADEX     Exposu… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         
+#>  7 ADFACE_V Findin… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         
+#>  8 ADIS_V   Immuno… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         
+#>  9 ADLB     Labora… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         
+#> 10 ADLBHY   Analys… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         
 #> # ℹ 13 more rows
 #> # ℹ 4 more variables: repeating <chr>, reference_data <chr>, comment <lgl>,
 #> #   developer_notes <lgl>
 
-specs$variables
+adam_variables
 #> # A tibble: 1,878 × 21
-#>    order dataset variable label       data_type length significant_digits format
-#>    <chr> <chr>   <chr>    <chr>       <chr>     <chr>  <chr>              <chr> 
-#>  1 1     ADAE    STUDYID  Study Iden… text      12     <NA>               <NA>  
-#>  2 2     ADAE    DOMAIN   Domain Abb… text      2      <NA>               <NA>  
-#>  3 3     ADAE    USUBJID  Unique Sub… text      11     <NA>               <NA>  
-#>  4 4     ADAE    AESEQ    Sequence N… integer   8      <NA>               <NA>  
-#>  5 5     ADAE    AESPID   Sponsor-De… text      3      <NA>               <NA>  
-#>  6 6     ADAE    AETERM   Reported T… text      46     <NA>               <NA>  
-#>  7 7     ADAE    AELLT    Lowest Lev… text      46     <NA>               <NA>  
-#>  8 8     ADAE    AELLTCD  Lowest Lev… integer   8      <NA>               <NA>  
-#>  9 9     ADAE    AEDECOD  Dictionary… text      46     <NA>               <NA>  
-#> 10 10    ADAE    AEPTCD   Preferred … integer   8      <NA>               <NA>  
+#>    dataset label       variable order data_type length significant_digits format
+#>    <chr>   <chr>       <chr>    <chr> <chr>     <chr>  <chr>              <chr> 
+#>  1 ADAE    Study Iden… STUDYID  1     text      12     <NA>               <NA>  
+#>  2 ADAE    Domain Abb… DOMAIN   2     text      2      <NA>               <NA>  
+#>  3 ADAE    Unique Sub… USUBJID  3     text      11     <NA>               <NA>  
+#>  4 ADAE    Sequence N… AESEQ    4     integer   8      <NA>               <NA>  
+#>  5 ADAE    Sponsor-De… AESPID   5     text      3      <NA>               <NA>  
+#>  6 ADAE    Reported T… AETERM   6     text      46     <NA>               <NA>  
+#>  7 ADAE    Lowest Lev… AELLT    7     text      46     <NA>               <NA>  
+#>  8 ADAE    Lowest Lev… AELLTCD  8     integer   8      <NA>               <NA>  
+#>  9 ADAE    Dictionary… AEDECOD  9     text      46     <NA>               <NA>  
+#> 10 ADAE    Preferred … AEPTCD   10    integer   8      <NA>               <NA>  
 #> # ℹ 1,868 more rows
 #> # ℹ 13 more variables: mandatory <chr>, assigned_value <lgl>, codelist <lgl>,
 #> #   common <lgl>, origin <lgl>, source <lgl>, pages <lgl>, method <lgl>,
 #> #   predecessor <lgl>, role <chr>, has_no_data <chr>, comment <lgl>,
 #> #   developer_notes <lgl>
+
+sdtm_datasets
+#> # A tibble: 48 × 5
+#>    name      label                            description          source author
+#>    <chr>     <chr>                            <chr>                <chr>  <chr> 
+#>  1 ae        Adverse Events                   An updated SDTM AE … https… Gopi …
+#>  2 ae_ophtha Adverse Events for Ophthalmology An example Adverse … Const… <NA>  
+#>  3 cm        Concomitant Medication           A SDTM CM dataset f… https… <NA>  
+#>  4 dm        Demography                       A SDTM DM dataset f… https… <NA>  
+#>  5 ds        Disposition                      An updated SDTM DS … https… Gopi …
+#>  6 eg        Electrocardiogram                An example of stand… Gener… <NA>  
+#>  7 ex        Exposure                         A SDTM EX dataset f… https… <NA>  
+#>  8 ex_ophtha Exposure for Ophthalmology       An example Exposure… Const… <NA>  
+#>  9 lb        Laboratory Measurements          An updated SDTM LB … https… Annie…
+#> 10 mh        Medical History                  An updated SDTM MH … https… Annie…
+#> # ℹ 38 more rows
 
 knitr::kable(head(pharmadverse))
 ```

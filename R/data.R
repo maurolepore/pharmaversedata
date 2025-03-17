@@ -4,9 +4,20 @@
 #' pharmadverse
 "pharmadverse"
 
-#' A list with data specifications
+#' Specs
 #'
 #' @examples
-#' str(specs)
-#' specs$define
-"specs"
+#' library(tibble)
+#'
+#' adam_datasets
+#'
+#' adam_variables
+#'
+#' sdtm_datasets
+"adam_datasets"
+
+#' @rdname adam_datasets
+"sdtm_datasets"
+
+#' @rdname adam_datasets
+"adam_variables"
