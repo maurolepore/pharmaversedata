@@ -5,7 +5,7 @@ account: maurolepore
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 14264442
-bundleId: 9958098
+bundleId: 9958155
 url: https://maurolepore.shinyapps.io/pharmaversedata/
 version: 1
 asMultiple: FALSE
