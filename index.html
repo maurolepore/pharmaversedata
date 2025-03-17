@@ -50,7 +50,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of pharmaversedata is to make it easy to access pharmaverse data and its documentation.</p>
+<p>The goal of pharmaversedata is to make it easy to access pharmaverse data, metadata, and its documentation.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -68,57 +68,59 @@
 <span><span class="co">#&gt; Loading required package: pharmaverseadam</span></span>
 <span><span class="co">#&gt; Loading required package: pharmaversesdtm</span></span>
 <span></span>
-<span><span class="va">specs</span><span class="op">$</span><span class="va">define</span></span>
-<span><span class="co">#&gt; # A tibble: 9 × 2</span></span>
-<span><span class="co">#&gt;   attribute        value                                                        </span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;            &lt;chr&gt;                                                        </span></span>
-<span><span class="co">#&gt; 1 StudyName        &lt;NA&gt;                                                         </span></span>
-<span><span class="co">#&gt; 2 StudyDescription &lt;NA&gt;                                                         </span></span>
-<span><span class="co">#&gt; 3 ProtocolName     &lt;NA&gt;                                                         </span></span>
-<span><span class="co">#&gt; 4 StandardName     ADaM-IG                                                      </span></span>
-<span><span class="co">#&gt; 5 StandardVersion  1.1                                                          </span></span>
-<span><span class="co">#&gt; 6 Language         en                                                           </span></span>
-<span><span class="co">#&gt; 7 &lt;NA&gt;             &lt;NA&gt;                                                         </span></span>
-<span><span class="co">#&gt; 8 Legend           Highlighted cells are required for Define-XML 2.1 and can be…</span></span>
-<span><span class="co">#&gt; 9 &lt;NA&gt;             Highlighted cells are used by ADaM only and can be left empt…</span></span>
-<span></span>
-<span><span class="va">specs</span><span class="op">$</span><span class="va">datasets</span></span>
+<span><span class="va">adam_datasets</span></span>
 <span><span class="co">#&gt; # A tibble: 23 × 12</span></span>
-<span><span class="co">#&gt;    dataset  label   class sub_class structure key_variables standard has_no_data</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt; &lt;lgl&gt;     &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;    &lt;chr&gt;      </span></span>
-<span><span class="co">#&gt;  1 ADAE     Advers… OCCU… NA        One reco… STUDYID, USU… ADaM-IG… No         </span></span>
-<span><span class="co">#&gt;  2 ADBCVA_P Best C… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         </span></span>
-<span><span class="co">#&gt;  3 ADCE_V   Clinic… &lt;NA&gt;  NA        &lt;NA&gt;      &lt;NA&gt;          ADaM-IG… No         </span></span>
-<span><span class="co">#&gt;  4 ADCM     Concom… &lt;NA&gt;  NA        &lt;NA&gt;      &lt;NA&gt;          ADaM-IG… No         </span></span>
-<span><span class="co">#&gt;  5 ADEG     Electr… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         </span></span>
-<span><span class="co">#&gt;  6 ADEX     Exposu… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         </span></span>
-<span><span class="co">#&gt;  7 ADFACE_V Findin… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         </span></span>
-<span><span class="co">#&gt;  8 ADIS_V   Immuno… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         </span></span>
-<span><span class="co">#&gt;  9 ADLB     Labora… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         </span></span>
-<span><span class="co">#&gt; 10 ADLBHY   Analys… BASI… NA        One or m… STUDYID, USU… ADaM-IG… No         </span></span>
+<span><span class="co">#&gt;    dataset  label   key_variables class sub_class structure standard has_no_data</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt; &lt;lgl&gt;     &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;      </span></span>
+<span><span class="co">#&gt;  1 ADAE     Advers… STUDYID, USU… OCCU… NA        One reco… ADaM-IG… No         </span></span>
+<span><span class="co">#&gt;  2 ADBCVA_P Best C… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         </span></span>
+<span><span class="co">#&gt;  3 ADCE_V   Clinic… &lt;NA&gt;          &lt;NA&gt;  NA        &lt;NA&gt;      ADaM-IG… No         </span></span>
+<span><span class="co">#&gt;  4 ADCM     Concom… &lt;NA&gt;          &lt;NA&gt;  NA        &lt;NA&gt;      ADaM-IG… No         </span></span>
+<span><span class="co">#&gt;  5 ADEG     Electr… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         </span></span>
+<span><span class="co">#&gt;  6 ADEX     Exposu… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         </span></span>
+<span><span class="co">#&gt;  7 ADFACE_V Findin… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         </span></span>
+<span><span class="co">#&gt;  8 ADIS_V   Immuno… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         </span></span>
+<span><span class="co">#&gt;  9 ADLB     Labora… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         </span></span>
+<span><span class="co">#&gt; 10 ADLBHY   Analys… STUDYID, USU… BASI… NA        One or m… ADaM-IG… No         </span></span>
 <span><span class="co">#&gt; # ℹ 13 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 4 more variables: repeating &lt;chr&gt;, reference_data &lt;chr&gt;, comment &lt;lgl&gt;,</span></span>
 <span><span class="co">#&gt; #   developer_notes &lt;lgl&gt;</span></span>
 <span></span>
-<span><span class="va">specs</span><span class="op">$</span><span class="va">variables</span></span>
+<span><span class="va">adam_variables</span></span>
 <span><span class="co">#&gt; # A tibble: 1,878 × 21</span></span>
-<span><span class="co">#&gt;    order dataset variable label       data_type length significant_digits format</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;              &lt;chr&gt; </span></span>
-<span><span class="co">#&gt;  1 1     ADAE    STUDYID  Study Iden… text      12     &lt;NA&gt;               &lt;NA&gt;  </span></span>
-<span><span class="co">#&gt;  2 2     ADAE    DOMAIN   Domain Abb… text      2      &lt;NA&gt;               &lt;NA&gt;  </span></span>
-<span><span class="co">#&gt;  3 3     ADAE    USUBJID  Unique Sub… text      11     &lt;NA&gt;               &lt;NA&gt;  </span></span>
-<span><span class="co">#&gt;  4 4     ADAE    AESEQ    Sequence N… integer   8      &lt;NA&gt;               &lt;NA&gt;  </span></span>
-<span><span class="co">#&gt;  5 5     ADAE    AESPID   Sponsor-De… text      3      &lt;NA&gt;               &lt;NA&gt;  </span></span>
-<span><span class="co">#&gt;  6 6     ADAE    AETERM   Reported T… text      46     &lt;NA&gt;               &lt;NA&gt;  </span></span>
-<span><span class="co">#&gt;  7 7     ADAE    AELLT    Lowest Lev… text      46     &lt;NA&gt;               &lt;NA&gt;  </span></span>
-<span><span class="co">#&gt;  8 8     ADAE    AELLTCD  Lowest Lev… integer   8      &lt;NA&gt;               &lt;NA&gt;  </span></span>
-<span><span class="co">#&gt;  9 9     ADAE    AEDECOD  Dictionary… text      46     &lt;NA&gt;               &lt;NA&gt;  </span></span>
-<span><span class="co">#&gt; 10 10    ADAE    AEPTCD   Preferred … integer   8      &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;    dataset label       variable order data_type length significant_digits format</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;              &lt;chr&gt; </span></span>
+<span><span class="co">#&gt;  1 ADAE    Study Iden… STUDYID  1     text      12     &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  2 ADAE    Domain Abb… DOMAIN   2     text      2      &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  3 ADAE    Unique Sub… USUBJID  3     text      11     &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  4 ADAE    Sequence N… AESEQ    4     integer   8      &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  5 ADAE    Sponsor-De… AESPID   5     text      3      &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  6 ADAE    Reported T… AETERM   6     text      46     &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  7 ADAE    Lowest Lev… AELLT    7     text      46     &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  8 ADAE    Lowest Lev… AELLTCD  8     integer   8      &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  9 ADAE    Dictionary… AEDECOD  9     text      46     &lt;NA&gt;               &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt; 10 ADAE    Preferred … AEPTCD   10    integer   8      &lt;NA&gt;               &lt;NA&gt;  </span></span>
 <span><span class="co">#&gt; # ℹ 1,868 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 13 more variables: mandatory &lt;chr&gt;, assigned_value &lt;lgl&gt;, codelist &lt;lgl&gt;,</span></span>
 <span><span class="co">#&gt; #   common &lt;lgl&gt;, origin &lt;lgl&gt;, source &lt;lgl&gt;, pages &lt;lgl&gt;, method &lt;lgl&gt;,</span></span>
 <span><span class="co">#&gt; #   predecessor &lt;lgl&gt;, role &lt;chr&gt;, has_no_data &lt;chr&gt;, comment &lt;lgl&gt;,</span></span>
 <span><span class="co">#&gt; #   developer_notes &lt;lgl&gt;</span></span>
+<span></span>
+<span><span class="va">sdtm_datasets</span></span>
+<span><span class="co">#&gt; # A tibble: 48 × 5</span></span>
+<span><span class="co">#&gt;    name      label                            description          source author</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;     &lt;chr&gt;                            &lt;chr&gt;                &lt;chr&gt;  &lt;chr&gt; </span></span>
+<span><span class="co">#&gt;  1 ae        Adverse Events                   An updated SDTM AE … https… Gopi …</span></span>
+<span><span class="co">#&gt;  2 ae_ophtha Adverse Events for Ophthalmology An example Adverse … Const… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  3 cm        Concomitant Medication           A SDTM CM dataset f… https… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  4 dm        Demography                       A SDTM DM dataset f… https… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  5 ds        Disposition                      An updated SDTM DS … https… Gopi …</span></span>
+<span><span class="co">#&gt;  6 eg        Electrocardiogram                An example of stand… Gener… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  7 ex        Exposure                         A SDTM EX dataset f… https… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  8 ex_ophtha Exposure for Ophthalmology       An example Exposure… Const… &lt;NA&gt;  </span></span>
+<span><span class="co">#&gt;  9 lb        Laboratory Measurements          An updated SDTM LB … https… Annie…</span></span>
+<span><span class="co">#&gt; 10 mh        Medical History                  An updated SDTM MH … https… Annie…</span></span>
+<span><span class="co">#&gt; # ℹ 38 more rows</span></span>
 <span></span>
 <span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">pharmadverse</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <table style="width:100%;" class="table">
